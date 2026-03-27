@@ -464,6 +464,15 @@ body {
 .carousel-btn:hover { background: rgba(0,212,255,0.22); }
 .carousel-btn:disabled { opacity: 0.3; cursor: default; }
 
+.demo-video {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+  border: 1px solid var(--card-border);
+}
+
 .demo-features {
   display: flex;
   flex-wrap: wrap;
