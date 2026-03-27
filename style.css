@@ -212,16 +212,16 @@ body {
 .nav-inner {
   max-width: 1140px;
   margin: 0 auto;
-  padding: 6px 24px;
+  padding: 10px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .nav-logo {
-  height: 200px;
+  height: 56px;
   width: auto;
-  max-width: 600px;
+  max-width: 280px;
   object-fit: contain;
   filter: brightness(0) invert(1);
 }
@@ -232,9 +232,9 @@ body {
   height: 100dvh;
   min-height: 600px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   overflow: hidden;
-  padding-top: 216px; /* desconta navbar fixa (logo 200px + 6px*2 padding) */
+  padding-top: 80px; /* desconta navbar fixa (logo 56px + 10px*2 padding) */
   background: radial-gradient(ellipse at 70% 50%, #4B008866 0%, transparent 60%),
               radial-gradient(ellipse at 5% 75%, #00D4FF22 0%, transparent 55%),
               radial-gradient(ellipse at 50% 110%, #C724B111 0%, transparent 50%),
@@ -255,11 +255,11 @@ body {
   display: grid;
   grid-template-columns: 1fr 360px;
   gap: 48px;
-  align-items: center;
+  align-items: start;
   width: 100%;
   max-width: 1140px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 24px 40px 0;
 }
 
 .hero-text {
@@ -880,16 +880,16 @@ body {
 
 /* Mobile portrait */
 @media (max-width: 600px) {
-  /* Hero mobile: padding-top = altura real do navbar (76px) + folga extra */
+  /* Hero mobile: sem min-height para não criar espaço vazio */
   .hero {
     height: auto;
-    min-height: 100dvh;
+    min-height: 0;
     padding-top: 0;
     align-items: flex-start;
   }
   .hero-content {
     grid-template-columns: 1fr;
-    padding: 110px 20px 40px; /* 110px = navbar (~92px) + folga (18px) */
+    padding: 72px 20px 48px; /* 72px = navbar (~60px) + folga (12px) */
     gap: 14px;
     text-align: center;
     display: flex;
@@ -916,7 +916,8 @@ body {
   .portfolio-grid { grid-template-columns: 1fr 1fr; }
   .authority-stats { grid-template-columns: 1fr; }
   .footer-inner { flex-direction: column; text-align: center; }
-  .nav-logo { height: 80px; max-width: 300px; }
-  .nav-inner .btn-primary { padding: 7px 13px; font-size: 0.72rem; white-space: nowrap; }
+  .nav-logo { height: 36px; max-width: 180px; }
+  .nav-inner { padding: 10px 16px; }
+  .nav-inner .btn-primary { padding: 8px 14px; font-size: 0.75rem; white-space: nowrap; }
   .btn-xlarge { padding: 18px 28px; font-size: 1rem; }
 }
