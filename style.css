@@ -101,6 +101,60 @@ body {
 
 .impact-quote strong { color: var(--cyan); }
 
+/* ── STATS STRIP ─────────────────────────────────────── */
+.stats-strip {
+  background: linear-gradient(90deg, var(--purple) 0%, #1a004a 50%, var(--purple) 100%);
+  border-top: 1px solid rgba(0,212,255,0.15);
+  border-bottom: 1px solid rgba(0,212,255,0.15);
+  padding: 28px 0;
+}
+
+.stats-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.stat-strip-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 40px;
+}
+
+.stat-strip-num {
+  font-size: 2.2rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, var(--cyan), var(--magenta));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.stat-strip-label {
+  font-size: 0.8rem;
+  color: var(--gray);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+.stat-strip-divider {
+  width: 1px;
+  height: 48px;
+  background: rgba(0,212,255,0.2);
+}
+
+@media (max-width: 600px) {
+  .stat-strip-item { padding: 8px 20px; }
+  .stat-strip-num { font-size: 1.8rem; }
+  .stat-strip-divider { display: none; }
+}
+
 /* ── BUTTONS ─────────────────────────────────────── */
 .btn {
   display: inline-flex;
@@ -497,6 +551,17 @@ body {
 .testimonial-author strong { display: block; font-size: 0.95rem; }
 .testimonial-author span { font-size: 0.8rem; color: var(--gray); }
 
+.testimonial-result {
+  margin-top: 20px;
+  padding: 8px 16px;
+  background: rgba(0,212,255,0.08);
+  border-radius: 100px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--cyan);
+  text-align: center;
+}
+
 /* ── PORTFOLIO ───────────────────────────────────── */
 .portfolio-tabs {
   display: flex;
@@ -700,6 +765,14 @@ body {
 .cta-sub strong { color: var(--white); }
 
 .cta-hint { margin-top: 20px; font-size: 0.85rem; color: var(--gray); }
+
+.cta-urgency {
+  font-size: 0.95rem;
+  color: var(--cyan);
+  font-weight: 700;
+  margin-bottom: 32px;
+  letter-spacing: 0.04em;
+}
 
 /* ── FOOTER ──────────────────────────────────────── */
 .footer {
