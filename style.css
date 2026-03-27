@@ -174,8 +174,8 @@ body {
   background: transparent;
   border: 2px solid var(--cyan);
   color: var(--cyan);
-  padding: 10px 20px;
-  font-size: 0.85rem;
+  padding: 8px 16px;
+  font-size: 0.78rem;
 }
 .btn-primary:hover { background: var(--cyan); color: var(--bg-dark); }
 
@@ -212,16 +212,16 @@ body {
 .nav-inner {
   max-width: 1140px;
   margin: 0 auto;
-  padding: 14px 24px;
+  padding: 6px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .nav-logo {
-  height: 100px;
+  height: 200px;
   width: auto;
-  max-width: 440px;
+  max-width: 600px;
   object-fit: contain;
   filter: brightness(0) invert(1);
 }
@@ -234,7 +234,7 @@ body {
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding-top: 120px; /* desconta navbar fixa — centra no espaço visível */
+  padding-top: 216px; /* desconta navbar fixa (logo 200px + 6px*2 padding) */
   background: radial-gradient(ellipse at 70% 50%, #4B008866 0%, transparent 60%),
               radial-gradient(ellipse at 5% 75%, #00D4FF22 0%, transparent 55%),
               radial-gradient(ellipse at 50% 110%, #C724B111 0%, transparent 50%),
@@ -266,6 +266,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  align-items: flex-start;
 }
 
 .hero-text h1 {
@@ -888,7 +889,7 @@ body {
   }
   .hero-content {
     grid-template-columns: 1fr;
-    padding: 120px 20px 40px; /* 120px = navbar (~90px) + folga (30px) */
+    padding: 110px 20px 40px; /* 110px = navbar (~92px) + folga (18px) */
     gap: 14px;
     text-align: center;
     display: flex;
@@ -915,7 +916,7 @@ body {
   .portfolio-grid { grid-template-columns: 1fr 1fr; }
   .authority-stats { grid-template-columns: 1fr; }
   .footer-inner { flex-direction: column; text-align: center; }
-  .nav-logo { height: 52px; max-width: 220px; }
-  .nav-inner .btn-primary { padding: 10px 16px; font-size: 0.78rem; white-space: nowrap; }
+  .nav-logo { height: 80px; max-width: 300px; }
+  .nav-inner .btn-primary { padding: 7px 13px; font-size: 0.72rem; white-space: nowrap; }
   .btn-xlarge { padding: 18px 28px; font-size: 1rem; }
 }
