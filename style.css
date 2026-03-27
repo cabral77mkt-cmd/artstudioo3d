@@ -422,13 +422,47 @@ body {
 
 .big-text { font-size: 2rem; font-weight: 900; }
 
-/* ── DEMO ────────────────────────────────────────── */
-.demo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+/* ── DEMO CAROUSEL ───────────────────────────────── */
+.demo-carousel-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-top: 48px;
 }
+
+.demo-carousel {
+  flex: 1;
+  overflow: hidden;
+}
+
+.demo-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.demo-slide {
+  flex: 0 0 calc(100% / 3);
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.carousel-btn {
+  background: rgba(0,212,255,0.1);
+  border: 1px solid rgba(0,212,255,0.35);
+  color: var(--cyan);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-btn:hover { background: rgba(0,212,255,0.22); }
+.carousel-btn:disabled { opacity: 0.3; cursor: default; }
 
 .demo-features {
   display: flex;
@@ -872,7 +906,6 @@ body {
     max-height: 420px;
   }
 
-  .demo-grid { grid-template-columns: 1fr 1fr; }
   .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
   .authority-stats { grid-template-columns: repeat(3, 1fr); }
   .steps { flex-direction: column; align-items: center; }
@@ -914,7 +947,6 @@ body {
   .hero-visual { display: none; }
 
   .section-dark, .section-gradient { padding: 72px 0; }
-  .demo-grid { grid-template-columns: 1fr; }
   .portfolio-grid { grid-template-columns: 1fr 1fr; }
   .authority-stats { grid-template-columns: 1fr; }
   .footer-inner { flex-direction: column; text-align: center; }

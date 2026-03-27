@@ -65,10 +65,18 @@
   <section class="demo section-dark">
     <div class="container">
       <h2 class="section-title text-center">Veja como seu evento pode ser percebido:</h2>
-      <div class="demo-grid">
-        <div class="placeholder-img tall"><span>Projeto 3D – Visão Geral<br/>1080×1920</span></div>
-        <div class="placeholder-img tall"><span>Projeto 3D – Área VIP<br/>1080×1920</span></div>
-        <div class="placeholder-img tall"><span>Projeto 3D – Palco<br/>1080×1920</span></div>
+      <div class="demo-carousel-wrap">
+        <button class="carousel-btn carousel-prev" aria-label="Anterior">&#8592;</button>
+        <div class="demo-carousel">
+          <div class="demo-track" id="demoTrack">
+            <div class="demo-slide"><div class="placeholder-img tall"><span>Projeto 3D – Visão Geral<br/>1080×1920</span></div></div>
+            <div class="demo-slide"><div class="placeholder-img tall"><span>Projeto 3D – Área VIP<br/>1080×1920</span></div></div>
+            <div class="demo-slide"><div class="placeholder-img tall"><span>Projeto 3D – Palco<br/>1080×1920</span></div></div>
+            <div class="demo-slide"><div class="placeholder-img tall"><span>Projeto 3D – Entrada<br/>1080×1920</span></div></div>
+            <div class="demo-slide"><div class="placeholder-img tall"><span>Projeto 3D – Camarote<br/>1080×1920</span></div></div>
+          </div>
+        </div>
+        <button class="carousel-btn carousel-next" aria-label="Próximo">&#8594;</button>
       </div>
       <div class="demo-features">
         <div class="feature-tag">🏟️ Estrutura completa em 3D</div>
@@ -460,5 +468,45 @@
   </a>
 
   <script src="script.js"></script>
+  <script>
+    (function() {
+      var track = document.getElementById('demoTrack');
+      if (!track) return;
+      var slides = track.querySelectorAll('.demo-slide');
+      var total = slides.length;
+      var current = 0;
+
+      function visibleCount() {
+        return window.innerWidth <= 600 ? 1 : 3;
+      }
+
+      function maxIndex() {
+        return Math.max(0, total - visibleCount());
+      }
+
+      function update() {
+        var w = visibleCount();
+        var pct = 100 / w;
+        slides.forEach(function(s) { s.style.flex = '0 0 ' + pct + '%'; });
+        track.style.transform = 'translateX(-' + (current * pct) + '%)';
+        document.querySelector('.carousel-prev').disabled = current === 0;
+        document.querySelector('.carousel-next').disabled = current >= maxIndex();
+      }
+
+      document.querySelector('.carousel-prev').addEventListener('click', function() {
+        if (current > 0) { current--; update(); }
+      });
+      document.querySelector('.carousel-next').addEventListener('click', function() {
+        if (current < maxIndex()) { current++; update(); }
+      });
+
+      window.addEventListener('resize', function() {
+        current = Math.min(current, maxIndex());
+        update();
+      });
+
+      update();
+    })();
+  </script>
 </body>
 </html>
